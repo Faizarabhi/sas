@@ -22,10 +22,10 @@ int main(){
     struct electeur electeur[nbr];
     int nvelection1[nbr],
         nbrt1=0,
-        nvelection2[nbr],
-        nbrT2=0;
+         nvelection2[nbr],
+        nbrt2=0;
     int bon=0,nbrelct,n,a=0,i=0;
-    int v=0;//  verification
+    int q=0;//  verification if le tour  de vote est continuer
     //election
 do{
     printf("taper le nombre des elections ");
@@ -111,6 +111,64 @@ void vottage(struct election list[nbr], int c)
             list[i - 1].vote++;
         }
     }
+// 1 er tour 
+
+while(q==0){
+    vottage(electionT1,nbrt1);
+    // eleminer <15%
+    for (int i=0;i<nbrt1;i++){
+        if(Pourcentage(electionT1[i].vote,i)>=15){
+            
+            //nombre des elections pass a 2 eme tour
+            nvelection2[nbrt2]=i;
+             nbrt2++;
+        }
+    }
+    if(nbrt2>=0) q=1;// ila lqahom kolhom <15% maghaykhrjch
+
+ if (nbrt2 == 0)
+    {
+        system("cls");
+        printf( "\t\t\t\t tous les elections eliminé \n ");
+
+        return 0;
+    }
+
+//afectation des electeur  pour 2 tour
+  else
+    {
+
+         printf("\t\t\t\t les presidents sont qualifié \n");
+        for (int i = 0; i < nbrt2; i++)
+        {
+
+            electionT2[i] = electionT1[nvelection2[i]];
+
+         
+
+            printf("President  %d :  %s   \n",i ,electionT2[i].nom);
+        }
+
+        printf("\t\t\t La 2EME tour \n");
+// TOUR 2
+
+
+
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
 
 
 
