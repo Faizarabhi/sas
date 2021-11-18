@@ -4,13 +4,13 @@
 #define max 100
 struct prisedent{
     int id_pr;
-    char* nom_pr[50];
+    char nom_pr[50];
     int vot1_pr;
     int vot2_pr;
     int vot3_pr;
 };
 struct electeur{
-    char* cin[9];
+    char cin[9];
 
 };
 
@@ -18,7 +18,8 @@ int main(){
 int k,i,j,c=0,nbp=max,nbe=max,n;
 float pourcentage;
 
-char * nom,y,cinscanf[50];
+char * nom,y;
+char cinscanf[50];
 // list_pr[nbp] =remplir la 1er lis || nv_listepr[nbp]=remplir la 2eme liste pour la 2 eme tour
 struct prisedent    list_pr[nbp],
              nv_listepr[nbp];
